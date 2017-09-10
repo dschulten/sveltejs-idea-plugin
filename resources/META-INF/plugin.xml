@@ -1,22 +1,25 @@
 <idea-plugin>
-  <id>technology.svelte</id>
-  <name>SvelteJS Plugin</name>
-  <version>1.0</version>
+  <id>de.escalon.idea.plugin.svelte</id>
+  <name>Svelte</name>
+  <version>0.0.1</version>
   <vendor email="ds@escalon.de" url="https://github.com/dschulten/sveltejs-idea-plugin">Escalon Systementwicklung, Dietrich Schulten</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      Idea plugin for <a href="https://technology.svelte.technology/">Svelte</a> components.
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      <html>
+      <dl>
+      <dt>0.0.1</dt>
+      <dd>Svelte directives not considered elements with unbound namespace
+      </dl>
+      </html>
     ]]>
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+  <idea-version since-build="141.0"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -24,8 +27,12 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
+  <!--<depends>JavaScript</depends>-->
+  <depends>com.intellij.modules.lang</depends>
+
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <xml.attributeDescriptorsProvider implementation="technology.svelte.codeInsight.attributes.SvelteAttributeDescriptorsProvider" order="first"/>
+    <xml.xmlSuppressionProvider implementation="technology.svelte.suppressions.XmlUnboundNsPrefixSuppressionProvider" order="first"/>
   </extensions>
 
   <actions>
