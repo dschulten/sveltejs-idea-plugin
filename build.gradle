@@ -1,0 +1,36 @@
+plugins {
+    id 'org.jetbrains.intellij' version '0.2.17'
+}
+
+group 'technology.svelte'
+version '0.0.1'
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+intellij {
+    version 'IU-2016.2'
+    plugins = ['JavascriptLanguage']
+    pluginName 'Svelte'
+}
+
+//patchPluginXml {
+//    pluginId "${group}.${project.name}"
+//    changeNotes """
+//      Add change notes herex.<br>
+//      <em>most HTML tags may be used</em>"""
+//    description """
+//      Enter short description for your plugin here.<br>
+//      <em>most HTML tags may be used</em>"""
+//}
