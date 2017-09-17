@@ -23,12 +23,16 @@ intellij {
     version 'IU-2016.2'
     plugins = ['JavascriptLanguage']
     pluginName 'Svelte'
+    intellij.updateSinceUntilBuild false
+    publish {
+        pluginId '10021-svelte'
+    }
 }
 
 //patchPluginXml {
 //    pluginId "${group}.${project.name}"
 //    changeNotes """
-//      Add change notes herex.<br>
+//      Add change notes here.<br>
 //      <em>most HTML tags may be used</em>"""
 //    description """
 //      Enter short description for your plugin here.<br>

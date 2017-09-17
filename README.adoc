@@ -1,2 +1,16 @@
 # sveltejs-idea-plugin
 Idea plugin for sveltejs components
+
+## Usage
+Install in Idea via Settings -> Plugins -> Browse repositories -> (search for) Vue.js
+
+Or download it from here and install it manually: https://plugins.jetbrains.com/plugin/10021-svelte
+
+## For Plugin Developers
+The plugin requires Intellij Ultimate for development, since it depends on the Javascript plugin.
+
+### Run the Plugin
+To start the plugin from Intellij, execute the runIde task from the list of intellij gradle tasks. It downloads a 2016.2 runtime and executes that version of intellij with the svelte plugin included.
+
+### Build Distribution
+Run the buildPlugin task. The distribution will be created in build/distributions.

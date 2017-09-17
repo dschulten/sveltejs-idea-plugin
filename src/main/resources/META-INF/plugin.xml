@@ -1,13 +1,13 @@
 <idea-plugin>
     <id>de.escalon.idea.plugin.svelte</id>
     <name>Svelte</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <vendor email="ds@escalon.de" url="https://github.com/dschulten/sveltejs-idea-plugin">Escalon Systementwicklung,
         Dietrich Schulten
     </vendor>
 
     <description><![CDATA[
-      Idea plugin for <a href="https://technology.svelte.technology/">Svelte</a> components.
+      Idea plugin for <a href="https://svelte.technology/">Svelte</a> components.
     ]]></description>
 
 
@@ -16,13 +16,15 @@
       <dl>
       <dt>0.0.1</dt>
       <dd>Svelte directives not considered elements with unbound namespace
+      <dt>0.0.2</dt>
+      <dd>Compatibility extended to 2017.*
       </dl>
       </html>
     ]]>
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="162"/>
+    <idea-version since-build="162" until-build="171.*"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
