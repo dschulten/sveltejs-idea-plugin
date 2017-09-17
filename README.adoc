@@ -2,7 +2,7 @@
 Idea plugin for sveltejs components
 
 ## Usage
-Install in Idea via Settings -> Plugins -> Browse repositories -> (search for) Vue.js
+Install in Idea via Settings -> Plugins -> Browse repositories -> (search for) Svelte
 
 Or download it from here and install it manually: https://plugins.jetbrains.com/plugin/10021-svelte
 
