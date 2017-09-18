@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>de.escalon.idea.plugin.svelte</id>
     <name>Svelte</name>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <vendor email="ds@escalon.de" url="https://github.com/dschulten/sveltejs-idea-plugin">Escalon Systementwicklung,
         Dietrich Schulten
     </vendor>
@@ -17,7 +17,9 @@
       <dt>0.0.1</dt>
       <dd>Svelte directives not considered elements with unbound namespace
       <dt>0.0.2</dt>
-      <dd>Compatibility extended to 2017.*
+      <dd>Compatibility extended to 2017.1
+      <dt>0.0.3</dt>
+      <dd>Compatibility extended to 2017.2
       </dl>
       </html>
     ]]>
