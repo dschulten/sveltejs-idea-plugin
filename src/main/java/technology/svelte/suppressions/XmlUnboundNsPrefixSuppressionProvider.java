@@ -12,8 +12,8 @@ public class XmlUnboundNsPrefixSuppressionProvider extends DefaultXmlSuppression
     public boolean isProviderAvailable(@NotNull PsiFile file) {
         boolean ret;
         Language language = file.getLanguage();
-        String displayName = language.getDisplayName();
-        if ("HTML".equals(displayName)) {
+        String languageID = language.getID();
+        if ("HTML".equals(languageID)) {
             ret = true;
         } else {
             ret = false;
