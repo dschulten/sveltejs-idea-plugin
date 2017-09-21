@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>de.escalon.idea.plugin.svelte</id>
     <name>Svelte</name>
-    <version>0.0.3</version>
+    <version>patchPluginXml</version>
     <vendor email="ds@escalon.de" url="https://github.com/dschulten/sveltejs-idea-plugin">Escalon Systementwicklung,
         Dietrich Schulten
     </vendor>
