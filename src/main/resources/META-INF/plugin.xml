@@ -44,6 +44,10 @@
         <xml.xmlSuppressionProvider
                 implementation="technology.svelte.suppressions.XmlUnboundNsPrefixSuppressionProvider"
                 order="first"/>
+        <fileTypeFactory implementation="technology.svelte.file.SvelteFileTypeFactory" />
+        <lang.parserDefinition language="Svelte" implementationClass="technology.svelte.parser.SvelteParserDefinition" />
+        <completion.contributor language="Svelte" implementationClass="technology.svelte.completion.SvelteCompletionContributor" />
+        <lang.fileViewProviderFactory language="Svelte" implementationClass="technology.svelte.file.SvelteFileViewProviderFactory" />
     </extensions>
 
     <actions>

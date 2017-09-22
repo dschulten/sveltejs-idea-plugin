@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        maven { url 'https://jitpack.io'}
+    }
+    dependencies{
+        classpath "com.github.hurricup:gradle-grammar-kit-plugin:2017.1"
+    }
+}
+
+
 plugins {
     id 'org.jetbrains.intellij' version '0.2.17'
 }
@@ -8,6 +18,10 @@ version '0.0.4'
 apply plugin: 'idea'
 apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
+apply plugin: 'org.jetbrains.grammarkit'
+
+// import is optional to make task creation easier
+import org.jetbrains.grammarkit.tasks.*
 
 sourceCompatibility = 1.8
 
@@ -29,6 +43,56 @@ intellij {
     }
 }
 
+sourceSets.main.java.srcDir new File(buildDir, 'generated-src/jflex')
+idea {
+    module {
+        // Marks the already(!) added srcDir as "generated"
+        generatedSourceDirs += file('build/generated-src/jflex')
+    }
+}
+
+task generateTopLexer(type: GenerateLexer) {
+    // source flex file
+    source = "src/main/jflex/technology/svelte/lexer//svelte_top.flex"
+
+    // target directory for lexer
+    targetDir = "build/generated-src/jflex"
+
+    // target classname, target file will be targetDir/targetClass.java
+    targetClass = "_SvelteTopLexer"
+
+    // optional, path to the task-specific skeleton file. Default: none
+    skeleton = 'src/main/jflex/idea-flex.skeleton'
+
+    // if set, plugin will remove a lexer output file before generating new one. Default: false
+    purgeOldFiles = true
+}
+
+task generateSubLexer(type: GenerateLexer) {
+    // source flex file
+    source = "src/main/jflex/technology/svelte/lexer//svelte_sub.flex"
+
+    // target directory for lexer
+    targetDir = "build/generated-src/jflex"
+
+    // target classname, target file will be targetDir/targetClass.java
+    targetClass = "_SvelteSubLexer"
+
+    // optional, path to the task-specific skeleton file. Default: none
+    skeleton = 'src/main/jflex/idea-flex.skeleton'
+
+    // if set, plugin will remove a lexer output file before generating new one. Default: false
+    purgeOldFiles = true
+}
+
+task generateLexers {
+    dependsOn generateTopLexer
+    dependsOn generateSubLexer
+}
+
+compileJava {
+    dependsOn generateLexers
+}
 //patchPluginXml {
 //    pluginId "${group}.${project.name}"
 //    changeNotes """
