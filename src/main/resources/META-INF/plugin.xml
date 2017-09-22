@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>de.escalon.idea.plugin.svelte</id>
     <name>Svelte</name>
-    <version>patchPluginXml</version>
+    <version>from.build.gradle</version>
     <vendor email="ds@escalon.de" url="https://github.com/dschulten/sveltejs-idea-plugin">Escalon Systementwicklung,
         Dietrich Schulten
     </vendor>
@@ -26,7 +26,7 @@
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="162" until-build="172.*"/>
+    <idea-version since-build="162"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->

@@ -13,4 +13,4 @@ The plugin requires Intellij Ultimate for development, since it depends on the J
 To start the plugin from Intellij, execute the runIde task from the list of intellij gradle tasks. It downloads a 2016.2 runtime and executes that version of intellij with the svelte plugin included.
 
 ### Build Distribution
-Run the buildPlugin task. The distribution will be created in build/distributions.
+Run the buildPlugin task. The distribution will be created in build/distributions. Upload to https://plugins.jetbrains.com/plugin/edit?pluginId=10021[Plugin Repository].
