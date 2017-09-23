@@ -15,7 +15,6 @@ public class SvelteParsingTest extends ParsingTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        //addExplicitExtension(LanguageASTFactory.INSTANCE, SvelteLanguage.Svelte_LANGUAGE, );
     }
 
     @Override
