@@ -15,14 +15,14 @@ public class MacroAttrImpl extends SveltePsiElement {
 
 	public String getMacroName() {
 		for(PsiElement el: getChildren()) {
-			if(el.getNode().getElementType() == SvelteTokenTypes.MACRO_NAME) return el.getText();
+			if(el.getNode().getElementType() == SvelteTokenTypes.BLOCK_STMT_NAME) return el.getText();
 		}
 		return null;
 	}
 
 	public PsiElement getParams() {
 		for(PsiElement el: getChildren()) {
-			if(el.getNode().getElementType() == SvelteTokenTypes.PARAMS) return el;
+			if(el.getNode().getElementType() == SvelteTokenTypes.SVELTE_PARAMS) return el;
 		}
 		return null;
 	}

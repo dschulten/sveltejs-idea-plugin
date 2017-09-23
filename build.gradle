@@ -51,6 +51,23 @@ idea {
     }
 }
 
+task generateLexer(type: GenerateLexer) {
+    // source flex file
+    source = "src/main/jflex/technology/svelte/lexer//svelte.flex"
+
+    // target directory for lexer
+    targetDir = "build/generated-src/jflex"
+
+    // target classname, target file will be targetDir/targetClass.java
+    targetClass = "_SvelteLexer"
+
+    // optional, path to the task-specific skeleton file. Default: none
+    skeleton = 'src/main/jflex/idea-flex.skeleton'
+
+    // if set, plugin will remove a lexer output file before generating new one. Default: false
+    purgeOldFiles = true
+}
+
 task generateTopLexer(type: GenerateLexer) {
     // source flex file
     source = "src/main/jflex/technology/svelte/lexer//svelte_top.flex"
@@ -86,8 +103,9 @@ task generateSubLexer(type: GenerateLexer) {
 }
 
 task generateLexers {
-    dependsOn generateTopLexer
-    dependsOn generateSubLexer
+//    dependsOn generateTopLexer
+//    dependsOn generateSubLexer
+    dependsOn generateLexer
 }
 
 compileJava {
