@@ -13,7 +13,7 @@ plugins {
 }
 
 group 'technology.svelte'
-version '0.0.4'
+version '0.0.5'
 
 apply plugin: 'idea'
 apply plugin: 'org.jetbrains.intellij'
@@ -68,55 +68,10 @@ task generateLexer(type: GenerateLexer) {
     purgeOldFiles = true
 }
 
-task generateTopLexer(type: GenerateLexer) {
-    // source flex file
-    source = "src/main/jflex/technology/svelte/lexer//svelte_top.flex"
-
-    // target directory for lexer
-    targetDir = "build/generated-src/jflex"
-
-    // target classname, target file will be targetDir/targetClass.java
-    targetClass = "_SvelteTopLexer"
-
-    // optional, path to the task-specific skeleton file. Default: none
-    skeleton = 'src/main/jflex/idea-flex.skeleton'
-
-    // if set, plugin will remove a lexer output file before generating new one. Default: false
-    purgeOldFiles = true
-}
-
-task generateSubLexer(type: GenerateLexer) {
-    // source flex file
-    source = "src/main/jflex/technology/svelte/lexer//svelte_sub.flex"
-
-    // target directory for lexer
-    targetDir = "build/generated-src/jflex"
-
-    // target classname, target file will be targetDir/targetClass.java
-    targetClass = "_SvelteSubLexer"
-
-    // optional, path to the task-specific skeleton file. Default: none
-    skeleton = 'src/main/jflex/idea-flex.skeleton'
-
-    // if set, plugin will remove a lexer output file before generating new one. Default: false
-    purgeOldFiles = true
-}
-
 task generateLexers {
-//    dependsOn generateTopLexer
-//    dependsOn generateSubLexer
     dependsOn generateLexer
 }
 
 compileJava {
     dependsOn generateLexers
 }
-//patchPluginXml {
-//    pluginId "${group}.${project.name}"
-//    changeNotes """
-//      Add change notes here.<br>
-//      <em>most HTML tags may be used</em>"""
-//    description """
-//      Enter short description for your plugin here.<br>
-//      <em>most HTML tags may be used</em>"""
-//}
