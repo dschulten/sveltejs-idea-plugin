@@ -48,6 +48,7 @@
         <lang.parserDefinition language="Svelte" implementationClass="technology.svelte.parser.SvelteParserDefinition" />
         <completion.contributor language="Svelte" implementationClass="technology.svelte.completion.SvelteCompletionContributor" />
         <lang.fileViewProviderFactory language="Svelte" implementationClass="technology.svelte.file.SvelteFileViewProviderFactory" />
+        <colorSettingsPage implementation="technology.svelte.editor.SvelteColorsPage" />
     </extensions>
 
     <actions>

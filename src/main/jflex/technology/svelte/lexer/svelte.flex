@@ -62,23 +62,23 @@ BLOCK_STMT_NAME = [^\'\"{} ]+
     {CLOSING}                   { yybegin(YYINITIAL); return CLOSING; }
 }
 
-<TAG_STARTED> {
-    [a-z0-9:]+                  { yybegin(IN_TAG); return TEMPLATE_HTML_TEXT; /* TAG_NAME; */ }
-}
-
-<IN_TAG> {
-    [a-z0-9]+(={STRING})?       { return TEMPLATE_HTML_TEXT; }
-
-    ">"                         { yybegin(YYINITIAL); return TEMPLATE_HTML_TEXT; /* END_TAG;*/ }
-}
-
-<ATTR_NAME> {
-    "="                         { yybegin(IN_ATTR_VALUE); return TEMPLATE_HTML_TEXT; }
-}
-
-<IN_ATTR_VALUE> {
-    {STRING}                    { yybegin(IN_TAG); return ATTR_VALUE; }
-}
+//<TAG_STARTED> {
+//    [a-z0-9:]+                  { yybegin(IN_TAG); return TEMPLATE_HTML_TEXT; /* TAG_NAME; */ }
+//}
+//
+//<IN_TAG> {
+//    [a-z0-9]+(={STRING})?       { return TEMPLATE_HTML_TEXT; }
+//
+//    ">"                         { yybegin(YYINITIAL); return TEMPLATE_HTML_TEXT; /* END_TAG;*/ }
+//}
+//
+//<ATTR_NAME> {
+//    "="                         { yybegin(IN_ATTR_VALUE); return TEMPLATE_HTML_TEXT; }
+//}
+//
+//<IN_ATTR_VALUE> {
+//    {STRING}                    { yybegin(IN_TAG); return ATTR_VALUE; }
+//}
 
 
 

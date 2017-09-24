@@ -7,7 +7,7 @@ import com.intellij.patterns.StandardPatterns;
 import com.intellij.psi.PsiElement;
 
 /**
- * @author Jan Dolecek - juzna.cz@gmail.com
+ * @author Dietrich Schulten - ds@escalon.de
  */
 public class SvelteCompletionContributor extends CompletionContributor {
     private static final Logger log = Logger.getInstance("SvelteCompletionContributor");

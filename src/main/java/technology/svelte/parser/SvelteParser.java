@@ -18,7 +18,7 @@ public class SvelteParser implements PsiParser {
         while(!builder.eof()) {
             IElementType type = builder.getTokenType();
 
-            if(type == SvelteTokenTypes.OPENING) parseMacro(builder);
+            if(type == SvelteTokenTypes.OPENING) parseTemplate(builder);
 //            else if(type == SvelteTokenTypes.N_ATTR) parseNAttr(builder);
 
             builder.advanceLexer(); // move to next token
@@ -29,8 +29,8 @@ public class SvelteParser implements PsiParser {
     }
 
     // {macro ...}
-    private void parseMacro(PsiBuilder builder) {
-        Marker macroStart = builder.mark();
+    private void parseTemplate(PsiBuilder builder) {
+        Marker templateStart = builder.mark();
         builder.advanceLexer();
 
         // is there a name?
@@ -54,7 +54,7 @@ public class SvelteParser implements PsiParser {
         if(builder.getTokenType() == SvelteTokenTypes.CLOSING) {
             builder.advanceLexer();
         }
-        macroStart.done(SvelteTokenTypes.MACRO);
+        templateStart.done(SvelteTokenTypes.MACRO);
     }
 
     // n:link="something"
