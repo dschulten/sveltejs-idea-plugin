@@ -4,11 +4,15 @@ import com.intellij.lang.ASTNode;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.lang.PsiParser;
+import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.tree.IElementType;
+import technology.svelte.JsInjector;
 import technology.svelte.lexer.SvelteTokenTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class SvelteParser implements PsiParser {
+
     @NotNull
     @Override
     public ASTNode parse(IElementType root, PsiBuilder builder) {
@@ -44,7 +48,7 @@ public class SvelteParser implements PsiParser {
 
         // params
         Marker paramsMark = builder.mark();
-//        parseParams(tagName, builder, SvelteTokenTypes.CLOSING);
+        parseParams(tagName, builder, SvelteTokenTypes.CLOSING);
         while((builder.getTokenType() != SvelteTokenTypes.CLOSING) && !builder.eof()) {
             builder.advanceLexer();
         }
@@ -94,11 +98,11 @@ public class SvelteParser implements PsiParser {
 //    }
 //
 //    // custom params
-//    private void parseParams(String macroName, PsiBuilder builder, IElementType closing) {
-//        // just process it atm
-//        while(builder.getTokenType() != closing && !builder.eof()) {
-//            builder.advanceLexer();
-//        }
-//
-//    }
+    private void parseParams(String macroName, PsiBuilder builder, IElementType closing) {
+        // just process it atm
+        while(builder.getTokenType() != closing && !builder.eof()) {
+            builder.advanceLexer();
+        }
+
+    }
 }

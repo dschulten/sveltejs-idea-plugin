@@ -27,16 +27,12 @@ import com.intellij.openapi.fileTypes.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import technology.svelte.Svelte;
-import technology.svelte.SvelteIcons;
 import technology.svelte.SvelteLanguage;
 import technology.svelte.editor.SvelteTemplateHighlighter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.util.Arrays;
-import java.util.List;
-
 
 
 public class SvelteFileType extends LanguageFileType {
@@ -69,12 +65,12 @@ public class SvelteFileType extends LanguageFileType {
 
     @NotNull
     public String getName() {
-        return Svelte.languageName;
+        return Svelte.LANGUAGE_NAME;
     }
 
     @NotNull
     public String getDescription() {
-        return Svelte.languageDescription;
+        return Svelte.LANGUAGE_DESCRIPTION;
     }
 
     @NotNull
