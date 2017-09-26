@@ -19,6 +19,8 @@ CRLF = \n | \r | \r\n
 WHITE_SPACE_CHAR = [\ \n\r\t\f]
 OPENING = "{{"
 CLOSING = "}}"
+OPENING_TRIPLE ="{{{"
+CLOSING_TRIPLE = "}}}"
 BLOCK_STMT_NAME = [^\'\"{} ]+
 
 
@@ -37,6 +39,7 @@ BLOCK_STMT_NAME = [^\'\"{} ]+
 
 <YYINITIAL> {
     {OPENING}                    { yybegin(AFTER_LD); return OPENING; }
+    {OPENING_TRIPLE}             { yybegin(IN_SVELTE); return OPENING; }
 //    "</"                         { yybegin(TAG_STARTED); return TEMPLATE_HTML_TEXT; /* TAG_CLOSING; */ }
 //    "<" / [a-z0-9:]              { yybegin(TAG_STARTED); return TEMPLATE_HTML_TEXT; /* TAG_START; */ }
 //    [^{<]+                       { return TEMPLATE_HTML_TEXT; }
@@ -60,6 +63,7 @@ BLOCK_STMT_NAME = [^\'\"{} ]+
 <IN_SVELTE> {
     [^\}]+                        { return SVELTE_PARAMS; }
     {CLOSING}                   { yybegin(YYINITIAL); return CLOSING; }
+    {CLOSING_TRIPLE}                   { yybegin(YYINITIAL); return CLOSING; }
 }
 
 //<TAG_STARTED> {

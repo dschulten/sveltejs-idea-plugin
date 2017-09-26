@@ -7,6 +7,9 @@ import com.intellij.testFramework.ParsingTestCase;
 import com.intellij.testFramework.PlatformTestCase;
 import technology.svelte.parser.SvelteParserDefinition;
 
+/**
+ * Parses *.svelte files and compares expected Psi tree.
+ */
 public class SvelteParsingTest extends ParsingTestCase {
     public SvelteParsingTest() {
         super("", "svelte", new SvelteParserDefinition());
