@@ -25,9 +25,14 @@ public class SvelteSyntaxHighlighter extends SyntaxHighlighterBase {
     public static final String TEMPLATE_ID = "Template";
     public static final TextAttributesKey TEMPLATE = TextAttributesKey.createTextAttributesKey(TEMPLATE_ID, DefaultLanguageHighlighterColors.TEMPLATE_LANGUAGE_COLOR);
 
+    public static final String IDENTIFIER_ID = "Identifier";
+    public static final TextAttributesKey IDENTIFIER = TextAttributesKey.createTextAttributesKey(TEMPLATE_ID, DefaultLanguageHighlighterColors.KEYWORD);
+
+
 
     // Groups of IElementType's
     public static final TokenSet sBAD = TokenSet.create(SvelteTokenTypes.BAD_CHARACTER);
+    public static final TokenSet sIDENTIFIERS = TokenSet.create(SvelteTokenTypes.BLOCK_STMT_NAME);
     public static final TokenSet sTEMPLATE = TokenSet.create(
             SvelteTokenTypes.OPENING,
             SvelteTokenTypes.CLOSING,
@@ -43,6 +48,7 @@ public class SvelteSyntaxHighlighter extends SyntaxHighlighterBase {
     static {
         fillMap(ATTRIBUTES, sBAD, BAD_CHARACTER);
         fillMap(ATTRIBUTES, sTEMPLATE, TEMPLATE);
+        fillMap(ATTRIBUTES, sIDENTIFIERS, IDENTIFIER);
     }
 
 

@@ -1,10 +1,15 @@
 # sveltejs-idea-plugin
-Idea plugin for sveltejs components
+
+Idea plugin for https://svelte.technology/[sveltejs] projects.
+
+Svelte is a Javascript MVC framework for web applications which compiles to pure Javascript, requires no framework dependency in the browser and allows to render the application server side (SSR).
+
+It works well with https://www.thoughtworks.com/radar/techniques/micro-frontends[micro-frontend approaches] as described by https://github.com/gustafnk/microservice-websites/[Gustaf Nilsson Kotte] or https://micro-frontends.org/[Microfrontends.org].
 
 ## Usage
 Install in Idea via Settings -> Plugins -> Browse repositories -> (search for) Svelte
 
-Or download it from here and install it manually: https://plugins.jetbrains.com/plugin/10021-svelte
+Or download it from https://plugins.jetbrains.com/plugin/10021-svelte[the Jetbrains Plugin repository] and install it manually.
 
 ## For Plugin Developers
 The plugin requires Intellij Ultimate for development, since it depends on the Javascript plugin.

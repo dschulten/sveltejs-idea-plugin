@@ -14,6 +14,4 @@ public class SveltePsiElement extends ASTWrapperPsiElement {
 	public SveltePsiElement(@NotNull ASTNode astNode) {
 		super(astNode);
 	}
-
-	// some common logic should come here
 }

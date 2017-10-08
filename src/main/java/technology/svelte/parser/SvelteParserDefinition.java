@@ -59,8 +59,13 @@ public class SvelteParserDefinition implements ParserDefinition {
 
     @NotNull
     @Override
-    public PsiElement createElement(ASTNode astNode) {
-        return new ASTWrapperPsiElement(astNode);
+    public PsiElement createElement(ASTNode node) {
+//        IElementType type = node.getElementType();
+//
+//        if(type == SvelteTokenTypes.MACRO_NODE) return new MacroNodeImpl(node);
+//        else if(type == SvelteTokenTypes.MACRO_ATTR) return new MacroAttrImpl(node);
+//        else
+        return new SveltePsiElement(node);
     }
 
     @Override
