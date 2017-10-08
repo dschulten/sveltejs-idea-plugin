@@ -22,6 +22,8 @@
       <dd>Compatibility extended to 2017.2
       <dt>0.0.4</dt>
       <dd>Minimal parsing, syntax-highlighting and code completion for Svelte templates
+      <dt>0.0.5</dt>
+      <dd>Very basic JS injection in #if statements and on: directives, triples
       </dl>
       </html>
     ]]>
