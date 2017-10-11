@@ -7,7 +7,6 @@ import com.intellij.lang.PsiParser;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.tree.IElementType;
-import technology.svelte.JsInjector;
 import technology.svelte.lexer.SvelteTokenTypes;
 import org.jetbrains.annotations.NotNull;
 
