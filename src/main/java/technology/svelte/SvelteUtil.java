@@ -10,6 +10,8 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.*;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.indexing.FileBasedIndex;
+import technology.svelte.file.SvelteFileType;
+import technology.svelte.psi.SvelteFile;
 
 import java.util.*;
 
@@ -78,20 +80,21 @@ public class SvelteUtil {
         return result != null ? result : Collections.<JSProperty>emptyList();
     }
 
-//    public static List<SimpleProperty> findProperties(Project project) {
-//        List<SimpleProperty> result = new ArrayList<SimpleProperty>();
-//        Collection<VirtualFile> virtualFiles =
-//                FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-//                        GlobalSearchScope.allScope(project));
-//        for (VirtualFile virtualFile : virtualFiles) {
-//            SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
-//            if (simpleFile != null) {
-//                SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, SimpleProperty.class);
-//                if (properties != null) {
-//                    Collections.addAll(result, properties);
-//                }
-//            }
-//        }
-//        return result;
-//    }
+    public static List<JSProperty> findProperties(Project project) {
+        List<JSProperty> result = new ArrayList<JSProperty>();
+        Collection<VirtualFile> virtualFiles =
+                FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SvelteFileType
+                                .SVELTE_FILE_TYPE,
+                        GlobalSearchScope.allScope(project));
+        for (VirtualFile virtualFile : virtualFiles) {
+            SvelteFile simpleFile = (SvelteFile) PsiManager.getInstance(project).findFile(virtualFile);
+            if (simpleFile != null) {
+                JSProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, JSProperty.class);
+                if (properties != null) {
+                    Collections.addAll(result, properties);
+                }
+            }
+        }
+        return result;
+    }
 }
